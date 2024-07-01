@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDOJRP | Chain Of Command</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .background-blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('background.png') no-repeat center center/cover;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        header {
+            background: rgba(51, 51, 51, 0.9);
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+        header li {
+            padding: 0 20px;
+        }
+        header #branding {
+            display: flex;
+            align-items: center;
+        }
+        header #branding h1 {
+            margin: 0;
+            margin-left: 10px;
+            font-size: 24px;
+        }
+        header .logo {
+            width: 50px;
+            height: auto;
+        }
+        #main {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .list-group {
+            list-style: none;
+            padding: 0;
+        }
+        .list-group-item {
+            background: #eee;
+            margin-bottom: 5px;
+            padding: 10px;
+            border: #ccc 1px solid;
+            border-radius: 5px;
+        }
+        footer {
+            background: rgba(51, 51, 51, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            border-top: #77aaff 3px solid;
+        }
+        .footer-banner {
+            background: #0e0d0d;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        footer p {
+            margin: 0;
+        }
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 1s;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .info-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px auto;
+            text-align: center;
+            max-width: 800px;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100px); }
+            to { transform: translateY(0); }
+        }
+        .button-container {
+            text-align: center;
+            animation: slideIn 2s;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 20px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        .button-description {
+            font-size: 14px;
+            color: rgb(10, 10, 10);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <div id="branding">
+                <img src="logo.png" alt="Logo" class="logo">
+                <h1>CDOJRP | Chain Of Command</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="priority_request.html">Priority Request</a></li>
+                <li><a href="streetnames.html">Street Names</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="main" class="container">
+        <div class="info-box">
+            <h2>Chain of Command</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Server Founder:</strong> Zach</li>
+                <li class="list-group-item"><strong>Server Owner:</strong> Ryan</li>
+                <li class="list-group-item"><strong>Server Co-Owner:</strong> Callum</li>
+                <li class="list-group-item">-------------------------------------------------------------------------------</li>
+                <li class="list-group-item"><strong>Executive Manager:</strong> Keane</li>
+                <li class="list-group-item"><strong>Administration Supervisor:</strong> Damian</li>
+                <li class="list-group-item"><strong>Developer:</strong> Blair</li>
+                <li class="list-group-item"><strong>Developer:</strong> Jamie</li>
+                <li class="list-group-item">-------------------------------------------------------------------------------</li>
+                <li class="list-group-item"><strong>Head Admin:</strong> [Position Open]</li>
+                <li class="list-group-item"><strong>Admin Supervisor:</strong> [Position Open]</li>
+                <li class="list-group-item"><strong>Admin:</strong> [Position Open]</li>
+                <li class="list-group-item">-------------------------------------------------------------------------------</li>
+                <li class="list-group-item"><strong>Head Moderator:</strong> [Position Open]</li>
+                <li class="list-group-item"><strong>Moderation Supervisor:</strong> [Position Open]</li>
+                <li class="list-group-item"><strong>Moderator:</strong> [Position Open]</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-banner">California Department Of Justice Roleplay | EST 2024 Owned By Zach S</div>
+        <p>&copy; 2024 Street Names. All Rights Reserved By CDOJRP.</p>
+    </footer>
+</body>
+</html>
