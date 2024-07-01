@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDOJRP | Priority Request</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Submit a Priority Request</h2>
+        <form id="priorityForm">
+            <div class="form-group">
+                <label for="username">Discord Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="priority">Priority Level</label>
+                <select id="priority" name="priority" required>
+                    <option value="Low">Low | No guns involved</option>
+                    <option value="Medium">Medium | Guns involved no pursuit</option>
+                    <option value="High">High | Guns involved pursuit</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="desc">Tell us what the priority is going to be about:</label>
+                <textarea id="desc" name="desc" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+            <a href="index.html" class="button">Go Back</a>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('priorityForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const priority = document.getElementById('priority').value;
+            const desc = document.getElementById('desc').value;
+
+            const webhookURL = 'https://discord.com/api/webhooks/1256957461185822820/utwX7oIKvVuMGoPaPFBn6NPQR9P-1aOdKy9iVjmm_U8i9ooNceD_PKSiJZjgBUgT6O46';
+
+            const requestBody = {
+                content: `**Priority Request**\n**Discord Name:** ${username}\n**Priority Level:** ${priority}\n**Call Description:** ${desc}`
+            };
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestBody)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Request submitted successfully!');
+                } else {
+                    alert('Error submitting request.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error submitting request.');
+            });
+        });
+    </script>
+</body>
+</html>
